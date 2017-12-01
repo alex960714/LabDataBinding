@@ -20,7 +20,13 @@ public class TimeCount extends BaseObservable {
     }
 
     @Bindable
-    public int getTimeDiff() {
-        return (hourEn *60+ minEn -hourSt*60-minSt)%(24*60);
+    public String getTimeDiff() {
+        if (hourEn>23 || hourSt>23 || minSt>59 || minEn>59){
+            return "Incorrect data";
+        }
+        if (hourEn < hourSt || (hourEn == hourSt && minEn < minSt)){
+            hourEn += 24;
+        }
+        return Integer.toString(hourEn *60+ minEn -hourSt*60-minSt);
     }
 }

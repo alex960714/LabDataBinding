@@ -15,14 +15,36 @@ public class MainActivity extends AppCompatActivity {
     private View.OnFocusChangeListener listener = new View.OnFocusChangeListener() {
         @Override
         public void onFocusChange(View view, boolean b) {
-            int startHour = Integer.parseInt(((EditText)findViewById(R.id.editTextStartHour))
-                    .getText().toString());
-            int startMin = Integer.parseInt(((EditText)findViewById(R.id.editTextStartMin))
-                    .getText().toString());
-            int endHour = Integer.parseInt(((EditText)findViewById(R.id.editTextEndHour))
-                    .getText().toString());
-            int endMin = Integer.parseInt(((EditText)findViewById(R.id.editTextEndMin))
-                    .getText().toString());
+            int startHour, startMin, endHour, endMin;
+            try {
+                startHour = Integer.parseInt(((EditText) findViewById(R.id.editTextStartHour))
+                        .getText().toString());
+            }catch (Exception e){
+                startHour = 0;
+
+            }
+
+            try {
+                startMin = Integer.parseInt(((EditText) findViewById(R.id.editTextStartMin))
+                        .getText().toString());
+            }catch (Exception e){
+                startMin = 0;
+            }
+
+            try {
+                endHour = Integer.parseInt(((EditText) findViewById(R.id.editTextEndHour))
+                        .getText().toString());
+            }catch (Exception e){
+                endHour = 0;
+            }
+
+            try {
+                endMin = Integer.parseInt(((EditText) findViewById(R.id.editTextEndMin))
+                        .getText().toString());
+            }catch (Exception e){
+                endMin = 0;
+            }
+
             timeCount.setHours(startHour, endHour);
             timeCount.setMin(startMin, endMin);
         }
