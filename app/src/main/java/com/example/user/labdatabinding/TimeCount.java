@@ -4,23 +4,23 @@ import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 
 public class TimeCount extends BaseObservable {
-    private int hourSt, hourFin;
-    private int minSt, minFin;
+    private int hourSt, hourEn;
+    private int minSt, minEn;
 
     public void setHours(int st, int en){
         this.hourSt=st;
-        this.hourFin=en;
+        this.hourEn =en;
         notifyPropertyChanged(com.example.user.labdatabinding.BR.timeDiff);
     }
 
     public void setMin(int st, int en){
         this.minSt=st;
-        this.minFin=en;
+        this.minEn =en;
         notifyPropertyChanged(com.example.user.labdatabinding.BR.timeDiff);
     }
 
     @Bindable
     public int getTimeDiff() {
-        return (hourFin*60+minFin-hourSt*60-minSt)%(24*60);
+        return (hourEn *60+ minEn -hourSt*60-minSt)%(24*60);
     }
 }

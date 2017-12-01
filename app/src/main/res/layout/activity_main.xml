@@ -1,19 +1,226 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<data>
+    <variable
+            name="time"
+            type="com.example.user.labdatabinding.TimeCount"
+    />
+</data>
+
 <android.support.constraint.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@android:color/black"
+
         tools:context="com.example.user.labdatabinding.MainActivity">
 
     <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!"
+            android:text=""
+            android:gravity="bottom|right"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+            android:textSize="27sp"
+            app:layout_constraintVertical_bias="0.04"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.98"
+            tools:layout_constraintRight_creator="1" tools:layout_constraintLeft_creator="1"
+            android:id="@+id/currResTextView"/>
+
+    <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time Calculator"
+            android:textColor="@android:color/white"
+            app:layout_constraintVertical_bias="0.04"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            tools:layout_constraintRight_creator="1" tools:layout_constraintLeft_creator="1"
+            android:textSize="40sp"/>
+
+    <TextView
+            android:id="@+id/textViewStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewTitle"
+            android:text="Start time:"
+            android:textColor="@android:color/white"
+            app:layout_constraintVertical_bias="0.25"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.2"
+            tools:layout_constraintRight_creator="1" tools:layout_constraintLeft_creator="1"
+            android:textSize="30sp"/>
+
+    <TextView
+            android:id="@+id/textViewEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewStart"
+            android:text="End time:"
+            android:textColor="@android:color/white"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.2"
+            tools:layout_constraintRight_creator="1" tools:layout_constraintLeft_creator="1"
+            android:textSize="30sp"/>
+
+    <TextView
+            android:id="@+id/textViewResultText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Result:"
+            android:textColor="@android:color/white"
+            app:layout_constraintVertical_bias="0.75"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.2"
+            tools:layout_constraintRight_creator="1" tools:layout_constraintLeft_creator="1"
+            android:textSize="30sp"/>
+
+    <EditText
+            android:id="@+id/editTextStartHour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/textViewStart"
+            android:width="60dp"
+            android:backgroundTint="@android:color/white"
+            android:ems="10"
+            android:inputType="number"
+            android:text="00"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            app:layout_constraintVertical_bias="0.37"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.4"
+            tools:layout_constraintRight_creator="1" tools:layout_constraintLeft_creator="1"
+            android:textSize="30sp"/>
+
+    <TextView
+            android:id="@+id/textViewStartDelim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:textColor="@android:color/white"
+            app:layout_constraintVertical_bias="0.37"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            tools:layout_constraintRight_creator="1" tools:layout_constraintLeft_creator="1"
+            android:textSize="30sp"/>
+
+    <EditText
+            android:id="@+id/editTextStartMin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="60dp"
+            android:backgroundTint="@android:color/white"
+            android:ems="10"
+            android:inputType="number"
+            android:text="00"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            app:layout_constraintVertical_bias="0.37"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.6"
+            tools:layout_constraintRight_creator="1" tools:layout_constraintLeft_creator="1"
+            android:textSize="30sp"/>
+
+    <EditText
+            android:id="@+id/editTextEndHour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="60dp"
+            android:backgroundTint="@android:color/white"
+            android:ems="10"
+            android:inputType="number"
+            android:text="00"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            app:layout_constraintVertical_bias="0.61"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.4"
+            tools:layout_constraintRight_creator="1" tools:layout_constraintLeft_creator="1"
+            android:textSize="30sp"/>
+
+    <TextView
+            android:id="@+id/textViewEndDelim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:textColor="@android:color/white"
+            app:layout_constraintVertical_bias="0.6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            tools:layout_constraintRight_creator="1" tools:layout_constraintLeft_creator="1"
+            android:textSize="30sp"/>
+
+    <EditText
+            android:id="@+id/editTextEndMin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="60dp"
+            android:backgroundTint="@android:color/white"
+            android:ems="10"
+            android:inputType="number"
+            android:text="00"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            app:layout_constraintVertical_bias="0.61"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.6"
+            tools:layout_constraintRight_creator="1" tools:layout_constraintLeft_creator="1"
+            android:textSize="30sp"/>
+
+    <TextView
+            android:id="@+id/textViewResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@{Integer.toString(time.timeDiff)}"
+            android:textColor="@android:color/white"
+            app:layout_constraintVertical_bias="0.83"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            tools:layout_constraintRight_creator="1" tools:layout_constraintLeft_creator="1"
+            android:textSize="30sp"/>
+
+
 
 </android.support.constraint.ConstraintLayout>
+</layout>
